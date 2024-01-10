@@ -1,0 +1,10 @@
+name: ItemStorages
+version: 1.0.0
+main: net.uhuli.itemstorage.Main
+description: An item storage plugin
+author: Uhuli
+api-version: '1.20'
+commands:
+  itemstorage:
+    description: Gives you an item storage
+    usage: /itemstorage <getData>
