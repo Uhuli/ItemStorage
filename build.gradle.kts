@@ -10,6 +10,7 @@ repositories {
     mavenCentral()
     maven {
         setUrl ("https://repo.papermc.io/repository/maven-public/")
+        setUrl ("https://repo.dmulloy2.net/repository/public/")
     }
 }
 
@@ -17,6 +18,7 @@ dependencies {
     compileOnly ("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     implementation("org.spongepowered:configurate-hocon:4.1.2")
     implementation("dev.triumphteam:triumph-gui:3.1.7")
+    compileOnly ("com.comphenix.protocol:ProtocolLib:5.1.0")
 }
 
 val javaTarget = 17

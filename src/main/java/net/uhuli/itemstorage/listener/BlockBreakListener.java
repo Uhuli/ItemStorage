@@ -1,7 +1,6 @@
 package net.uhuli.itemstorage.listener;
 
 import com.destroystokyo.paper.event.block.BlockDestroyEvent;
-import com.destroystokyo.paper.event.entity.CreeperIgniteEvent;
 import io.papermc.paper.event.block.BlockBreakBlockEvent;
 import net.uhuli.itemstorage.Main;
 import net.uhuli.itemstorage.inventory.ItemstorageItem;
@@ -87,7 +86,14 @@ public class BlockBreakListener implements Listener {
 
                 block.setType(Material.AIR);
 
-                Bukkit.getWorld(block.getWorld().getName()).dropItemNaturally(block.getLocation(), ItemstorageItem.item().getItemStack());
+                try {
+                    Bukkit.getWorld(block.getWorld().getName()).dropItemNaturally(block.getLocation(),
+                            ItemstorageItem.item(
+                                    Main.getLocationDatabase().getUUID(block.getLocation()),
+                                    Main.getLocationDatabase().getStorage(block.getLocation())).getItemStack());
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 return true;
             }
         }

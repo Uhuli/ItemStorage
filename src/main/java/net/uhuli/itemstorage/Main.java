@@ -19,7 +19,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-
+        
         try {
             // Ensure the plugin's data folder exists
             if (!getDataFolder().exists()) {

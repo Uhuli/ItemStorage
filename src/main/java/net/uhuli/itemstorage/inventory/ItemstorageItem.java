@@ -28,4 +28,19 @@ public class ItemstorageItem {
                 }).asGuiItem();
         return item;
     }
+
+    public static GuiItem item(UUID UUID, int storage) {
+        NamespacedKey isItemStorageKey = new NamespacedKey(Main.getInstance(), "isItemStorage");
+        NamespacedKey UUIDKey = new NamespacedKey(Main.getInstance(), "uuid");
+        NamespacedKey StorageKey = new NamespacedKey(Main.getInstance(), "storage");
+        GuiItem item = ItemBuilder.from(Material.LODESTONE).name(Message.miniMessage("<i:false><gold><b>ItemStorage</b></gold>"))
+                .enchant(Enchantment.DURABILITY, 1)
+                .flags(ItemFlag.HIDE_ENCHANTS)
+                .pdc(persistentDataContainer -> {
+                    persistentDataContainer.set(isItemStorageKey, PersistentDataType.BOOLEAN, true);
+                    persistentDataContainer.set(UUIDKey, PersistentDataType.STRING, UUID.toString());
+                    persistentDataContainer.set(StorageKey, PersistentDataType.INTEGER, storage);
+                }).asGuiItem();
+        return item;
+    }
 }

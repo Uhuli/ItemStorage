@@ -80,4 +80,20 @@ public class LocationDatabase {
             return Material.getMaterial(resultSet.getString(4));
         }
     }
+
+    public UUID getUUID(Location location) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT uuid FROM itemstorages WHERE location = ?")) {
+            preparedStatement.setString(1, location.toString());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return UUID.fromString(resultSet.getString(2));
+        }
+    }
+
+    public int getStorage(Location location) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT storage FROM itemstorages WHERE location = ?")) {
+            preparedStatement.setString(1, location.toString());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.getInt(3);
+        }
+    }
 }
