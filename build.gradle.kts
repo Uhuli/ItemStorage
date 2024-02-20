@@ -10,6 +10,8 @@ repositories {
     mavenCentral()
     maven {
         setUrl ("https://repo.papermc.io/repository/maven-public/")
+    }
+    maven {
         setUrl ("https://repo.dmulloy2.net/repository/public/")
     }
 }

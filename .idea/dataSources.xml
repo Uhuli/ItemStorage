@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="itemstorage.db" uuid="a52a52ef-9e2e-4617-9553-a386c8875f71">
+    <data-source source="LOCAL" name="itemstorage.db [2]" uuid="8667e229-3a58-4bd4-96c7-a2605f16023d">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Mika\Desktop\ItemStorageTest\plugins\ItemStorages\itemstorage.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:E:\Server\ItemStorageTest\plugins\ItemStorages\itemstorage.db</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

@@ -37,7 +37,7 @@ public class Main extends JavaPlugin {
 
         getLogger().info("ItemStorage Plugin enabled.");
     }
-
+    
     @Override
     public void onDisable() {
         try {
